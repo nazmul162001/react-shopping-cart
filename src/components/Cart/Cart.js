@@ -1,10 +1,22 @@
 import React from 'react';
+import './Cart.css';
 
-const Cart = () => {
+const Cart = ({item}) => {
+  const {id, title, author, price, img} = item;
   return (
-    <div>
-      <h2>This is my cart section</h2>
-    </div>
+    <section className=''>
+      <div className="carts w-64 p-5 hover:cursor-pointer hover:shadow-2xl">
+        <div className="image_box">
+          <img className='w-40 h-52' src= {img} alt="" />
+        </div>
+        <div className="details">
+          <p className='font-bold'>{title}</p>
+          <p className='text-gray-700 text-sm'>{author}</p>
+          <p className='font-bold text-gray-700'>{price}</p>
+          <button className='px-3 py-1 border-0 font-bold bg-sky-400 outline-none'>Add to Cart</button>
+        </div>
+      </div>
+    </section>
   );
 };
 
