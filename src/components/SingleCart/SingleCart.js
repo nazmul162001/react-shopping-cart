@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './SingleCart.css';
+import { toast } from 'react-toastify';
 
 const SingleCart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
@@ -8,6 +9,7 @@ const SingleCart = ({ cart, setCart, handleChange }) => {
     const arr = cart.filter((item) => item.id !== id);
     setCart(arr);
     handlePrice();
+    toast.success('Item Remove Successfully')
   };
 
   const handlePrice = () => {
@@ -30,9 +32,9 @@ const SingleCart = ({ cart, setCart, handleChange }) => {
               <p>{item.title}</p>
             </div>
             <div>
-              <button onClick={() => handleChange(item, 1)}>+</button>
-              <button>{item.amount}</button>
-              <button onClick={() => handleChange(item, -1)}>-</button>
+              <button className='px-1 py-1 text-2xl bg-red-100 rounded-full' onClick={() => handleChange(item, 1)}><i class="fas fa-plus"></i></button>
+              <button className='px-2 py-1 text-2xl bg-red-100 rounded-full'>{item.amount}</button>
+              <button className='px-1 py-1 text-2xl bg-red-100 rounded-full' onClick={() => handleChange(item, -1)}><i class="fas fa-minus"></i></button>
             </div>
             <div>
               <span>{item.price}</span>
