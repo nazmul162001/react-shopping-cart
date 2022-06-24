@@ -4,13 +4,17 @@ import Product from "./components/Product/Product";
 
 function App() {
   const [show, setShow] = useState(true);
+  const [cart, setCart] = useState([]);
+  const handleAddToCart = (item) => {
+    setCart([...cart, item])
+  }  
   
   
   return (
     <div className="">
       <Navbar setShow={setShow}/>
       {
-        show? <Product /> : "cart"
+        show? <Product handleAddToCart={handleAddToCart} /> : "cart"
       }
     </div>
   );
