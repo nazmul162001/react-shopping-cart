@@ -4,10 +4,10 @@ import './Cart.css';
 const Cart = ({item, handleAddToCart}) => {
   const {id, title, author, price, img} = item;
   return (
-    <section className='w-full mx-auto'>
+    <section className='w-full flex justify-center items-center'>
       <div className="carts w-64 p-5 hover:cursor-pointer hover:shadow-2xl">
         <div className="image_box">
-          <img className='w-40 h-52' src= {img} alt="" />
+          <img className='w-full h-52' src= {img} alt="" />
         </div>
         <div className="details">
           <p className='font-bold'>{title}</p>
