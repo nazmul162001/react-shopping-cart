@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 const SingleCart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
 
+  // handle remove item 
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
     setCart(arr);
@@ -12,6 +13,7 @@ const SingleCart = ({ cart, setCart, handleChange }) => {
     toast.success('Item Remove Successfully')
   };
 
+  // handle Price 
   const handlePrice = () => {
     let ans = 0;
     cart.map((item) => (ans += item.amount * item.price));
@@ -44,7 +46,7 @@ const SingleCart = ({ cart, setCart, handleChange }) => {
         ))}
         <div className="total">
           <span>Total Price of your Cart</span>
-          <span>Rs - {price}</span>
+          <span>BDT - {price}</span>
         </div>
       </article>
     </div>

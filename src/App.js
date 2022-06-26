@@ -9,6 +9,7 @@ function App() {
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
 
+  // handle add to cart 
   const handleAddToCart = (item) => {
     if (cart.indexOf(item) !== -1){
       toast.error('Already Added this item')
@@ -40,7 +41,7 @@ function App() {
         <SingleCart cart={cart} setCart={setCart} handleChange={handleChange} />
       )}
       <ToastContainer
-        position="top-right"
+        position="top-left"
         autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
